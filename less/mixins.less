@@ -1,1 +1,30 @@
 // Mixins Here
+
+.flexWhenMobile(@direction: column, @wrap: nowrap, @width: 100%){
+    @media @mobile{
+        display: flex;
+        flex-flow: @direction @wrap;
+        width: @width;
+    }
+}
+
+//Parametric Button stuff
+
+.customButton(@fgColor:#ffffff, @bgColor: @btn-bg-color){
+    display: block;
+    color: @fgColor;
+    background: @bgColor;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 1rem;
+    font-weight: bold;
+    font-size: 1.6rem;
+    &:hover{
+        color: @bgColor;
+        background: @fgColor;
+    }
+
+    @media @mobile{
+        width: 100%;
+    }
+}
